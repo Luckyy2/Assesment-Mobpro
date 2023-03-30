@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Movies</string>
+    <string name="app_name">Kalkulator Diskon</string>
     <string name="introCFC">Aplikasi ini merupakan penghitung diskon dengan mudah,cepat dan praktis, cobalah sekarang dan rasakan sensasinya!</string>
     <string name="harga_hint">Harga (Rp)</string>
     <string name="diskon">Diskon (%)</string>
