@@ -70,9 +70,21 @@
             android:fontFamily="@font/cantora_one"
             android:text="@string/hitung"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/diskonHint"
+            app:layout_constraintEnd_toStartOf="@+id/btnClear"
             app:layout_constraintStart_toStartOf="@+id/diskonHint"
             app:layout_constraintTop_toBottomOf="@+id/diskonHint" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cantora_one"
+            android:text="@string/clear"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/diskonHint"
+            app:layout_constraintHorizontal_bias="0.731"
+            app:layout_constraintStart_toStartOf="@+id/diskonHint"
+            app:layout_constraintTop_toTopOf="@+id/btnHitung" />
         <View
             android:id="@+id/divider"
             android:layout_width="match_parent"

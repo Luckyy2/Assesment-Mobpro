@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import org.d3if3001.movies.databinding.ActivityMainBinding
+import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnClear.setOnClickListener{reset()}
         binding.btnHitung.setOnClickListener {
             val harga = binding.hargaInp.text.toString().trim()
             val diskon = binding.diskonInp.text.toString().trim()
@@ -31,9 +33,16 @@ class MainActivity : AppCompatActivity() {
                 else -> {
                     totalDiskon = harga.toInt() * diskon.toInt() / 100
                     hargaBaru = harga.toInt() - totalDiskon
-                    binding.tvTotal.text = hargaBaru.toString()
+                    val df = DecimalFormat("#,##0.00")
+                    binding.tvTotal.text = df.format(hargaBaru)
                 }
             }
         }
+    }
+
+    private fun reset() {
+        binding.hargaInp.text?.clear()
+        binding.diskonInp.text?.clear()
+        binding.tvTotal.setText("")
     }
 }
