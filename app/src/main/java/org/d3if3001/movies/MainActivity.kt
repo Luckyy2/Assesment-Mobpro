@@ -14,35 +14,28 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnHitung.setOnClickListener{hitungDiskon()}
         binding.btnClear.setOnClickListener{reset()}
-        binding.btnHitung.setOnClickListener {
-            val harga = binding.hargaInp.text.toString().trim()
-            val diskon = binding.diskonInp.text.toString().trim()
-            var totalDiskon = 0
-            var hargaBaru = 0
 
-            when{
-                TextUtils.isEmpty(harga) -> {
-                    Toast.makeText(this,"Harga belum ada!", Toast.LENGTH_SHORT).show()
-                    binding.hargaInp.requestFocus()
-                }
-                TextUtils.isEmpty(diskon) -> {
-                    Toast.makeText(this,"Diskon belum ada!", Toast.LENGTH_SHORT).show()
-                    binding.diskonInp.requestFocus()
-                }
-                else -> {
-                    totalDiskon = harga.toInt() * diskon.toInt() / 100
-                    hargaBaru = harga.toInt() - totalDiskon
-                    val df = DecimalFormat("#,##0.00")
-                    binding.tvTotal.text = df.format(hargaBaru)
-                }
-            }
-        }
     }
-
     private fun reset() {
         binding.hargaInp.text?.clear()
         binding.diskonInp.text?.clear()
         binding.tvTotal.setText("")
+    }
+    private fun hitungDiskon() {
+        val harga = binding.hargaInp.text.toString()
+        if (TextUtils.isEmpty(harga)) {
+            Toast.makeText(this, R.string.harga_invalid, Toast.LENGTH_LONG).show()
+            return
+        }
+        val diskon = binding.diskonInp.text.toString()
+        if (TextUtils.isEmpty(diskon)) {
+            Toast.makeText(this, R.string.diskon_invalid, Toast.LENGTH_LONG).show()
+            return
+        }
+        val totalDiskon =  harga.toDouble() * diskon.toDouble() / 100
+        val hargaBaru = harga.toDouble() - totalDiskon
+        binding.tvTotal.text = getString(R.string.tvTotal_x,hargaBaru)
     }
 }
