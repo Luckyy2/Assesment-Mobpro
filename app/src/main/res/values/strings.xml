@@ -5,7 +5,9 @@
     <string name="diskon">Diskon (%)</string>
     <string name="hitung">Hitung</string>
     <string name="clear">Reset</string>
+    <string name="nama_invalid">Masukan nama terlebih dahulu</string>
     <string name="harga_invalid">Masukan harga terlebih dahulu</string>
     <string name="diskon_invalid">Masukan diskon terlebih dahulu</string>
     <string name="tvTotal_x">Rp %.2f</string>
+    <string name="namaBarang">Nama Barang</string>
 </resources>
