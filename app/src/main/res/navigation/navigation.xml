@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/firstPage">
+    <fragment
+        android:id="@+id/firstPage"
+        android:name="org.d3if3001.movies.ui.FirstPage"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstPage_to_hitungDiskonFragment"
+            app:destination="@id/hitungDiskonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hitungDiskonFragment"
+        android:name="org.d3if3001.movies.ui.HitungDiskonFragment"
+        android:label="fragment_hitung"
+        tools:layout="@layout/fragment_hitung" >
+        <action
+            android:id="@+id/action_hitungDiskonFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="org.d3if3001.movies.ui.AboutFragment"
+        android:label="@string/tentang_aplikasi"
+        tools:layout="@layout/fragment_about"/>
+</navigation>

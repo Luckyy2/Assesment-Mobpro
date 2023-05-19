@@ -1,7 +1,8 @@
-package org.d3if3001.movies.model
+package org.d3if3001.movies.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import org.d3if3001.movies.model.HasilDiskon
 
 class DiskonViewModel : ViewModel() {
 

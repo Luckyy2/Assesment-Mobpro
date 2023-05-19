@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Kalkulator Diskon</string>
-    <string name="introCFC">Aplikasi ini merupakan penghitung diskon dengan mudah,cepat dan praktis, cobalah sekarang dan rasakan sensasinya!</string>
+    <string name="introCFC">Aplikasi ini merupakan penghitung diskon dengan mudah,cepat dan praktis, cobalah sekarang dan rasakan kemudahannya!</string>
     <string name="harga_hint">Harga (Rp)</string>
     <string name="diskon">Diskon (%)</string>
     <string name="hitung">Hitung</string>
@@ -10,4 +10,8 @@
     <string name="diskon_invalid">Masukan diskon terlebih dahulu</string>
     <string name="tvTotal_x">Rp %.2f</string>
     <string name="namaBarang">Nama Barang</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="copyright">Hitung Diskon merupakan sebuah aplikasi Android untuk menghitung harga suatu barang sehingga seseorang dapat mengetahui harga barang tersebut setelah mendapatkan diskon.\n\n temukan kodenya di https://github.com/Luckyy2/Assesment-Mobpro/tree/kalkulator_diskon_Ass2\n\nCopyright.\nAll rights reserved.</string>
+    <string name="bagikan">Bagikan</string>
+    <string name="bagikan_template">Nama Barang: %1$s \nHarga setelah diskon: %2$s \n</string>
 </resources>
