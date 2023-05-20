@@ -9,9 +9,17 @@
     <string name="harga_invalid">Masukan harga terlebih dahulu</string>
     <string name="diskon_invalid">Masukan diskon terlebih dahulu</string>
     <string name="tvTotal_x">Rp %.2f</string>
+    <string name="tvNama_x">nama</string>
     <string name="namaBarang">Nama Barang</string>
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
-    <string name="copyright">Hitung Diskon merupakan sebuah aplikasi Android untuk menghitung harga suatu barang sehingga seseorang dapat mengetahui harga barang tersebut setelah mendapatkan diskon.\n\n temukan kodenya di https://github.com/Luckyy2/Assesment-Mobpro/tree/kalkulator_diskon_Ass2\n\nCopyright.\nAll rights reserved.</string>
+    <string name="copyright">Kalkulator Diskon merupakan sebuah aplikasi Android untuk menghitung harga suatu barang sehingga seseorang dapat mengetahui harga barang tersebut setelah mendapatkan diskon.\n\n temukan kodenya di https://github.com/Luckyy2/Assesment-Mobpro/tree/kalkulator_diskon_Ass2\n\nCopyright.\nAll rights reserved.</string>
     <string name="bagikan">Bagikan</string>
-    <string name="bagikan_template">Nama Barang: %1$s \nHarga setelah diskon: %2$s \n</string>
+    <string name="bagikan_template">Harga setelah diskon: %1$s \n</string>
+    <string name="belum_ada_data">Data tidak kosong</string>
+    <string name="hapus_histori">Hapus Histori</string>
+    <string name="histori">History</string>
+    <string name="konfirmasi_hapus">Hapus semua history?</string>
+    <string name="hapus">History telah dihapus</string>
+    <string name="konfirmasi">Konfimasi</string>
+    <string name="batal">Cancel</string>
 </resources>

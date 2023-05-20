@@ -5,26 +5,34 @@
     android:id="@+id/navigation"
     app:startDestination="@id/firstPage">
     <fragment
+        android:id="@+id/aboutFragment"
+        android:name="org.d3if3001.movies.ui.about.AboutFragment"
+        android:label="@string/tentang_aplikasi"
+        tools:layout="@layout/fragment_about"/>
+    <fragment
+        android:id="@+id/hitungDiskonFragment"
+        android:name="org.d3if3001.movies.ui.HitungDiskonFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_hitung" >
+        <action
+            android:id="@+id/action_hitungDiskonFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_hitungDiskonFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/firstPage"
         android:name="org.d3if3001.movies.ui.FirstPage"
-        android:label="fragment_first"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_first" >
         <action
             android:id="@+id/action_firstPage_to_hitungDiskonFragment"
             app:destination="@id/hitungDiskonFragment" />
     </fragment>
     <fragment
-        android:id="@+id/hitungDiskonFragment"
-        android:name="org.d3if3001.movies.ui.HitungDiskonFragment"
-        android:label="fragment_hitung"
-        tools:layout="@layout/fragment_hitung" >
-        <action
-            android:id="@+id/action_hitungDiskonFragment_to_aboutFragment"
-            app:destination="@id/aboutFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/aboutFragment"
-        android:name="org.d3if3001.movies.ui.AboutFragment"
-        android:label="@string/tentang_aplikasi"
-        tools:layout="@layout/fragment_about"/>
+        android:id="@+id/historyFragment"
+        android:name="org.d3if3107.kalkulatordiskon.ui.histori.HistoryFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_history"/>
 </navigation>
