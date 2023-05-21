@@ -10,4 +10,5 @@ data class DiskonEntity (
     var tanggal: Long = System.currentTimeMillis(),
     var harga: Double,
     var diskon:Double,
+    var namaBarang:String,
     )

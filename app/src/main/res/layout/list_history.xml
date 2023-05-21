@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
-        android:id="@+id/tanggalTextView"
+        android:id="@+id/NamaTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -14,7 +14,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/kategoriTextView"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="15 Mei 2023" />
+        tools:text="Minyak" />
     <TextView
         android:id="@+id/kategoriTextView"
         android:layout_width="40dp"
@@ -29,14 +29,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="2" />
+        tools:text="M" />
     <TextView
         android:id="@+id/diskonTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintStart_toStartOf="@+id/tanggalTextView"
-        app:layout_constraintTop_toBottomOf="@+id/tanggalTextView"
+        app:layout_constraintStart_toStartOf="@+id/NamaTextView"
+        app:layout_constraintTop_toBottomOf="@+id/NamaTextView"
         tools:text="Total Diskon : 25000,00" />
 </androidx.constraintlayout.widget.ConstraintLayout>

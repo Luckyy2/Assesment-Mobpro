@@ -17,10 +17,11 @@ class DiskonViewModel(private val db: DiskonDao) : ViewModel() {
 
     private val hasilDiskon = MutableLiveData<HasilDiskon?>()
 
-    fun hitungDiskon(harga: Double, diskon: Double) {
+    fun hitungDiskon(harga: Double, diskon: Double, namaBarang:String) {
         val dataDiskon = DiskonEntity(
             harga = harga,
             diskon = diskon,
+            namaBarang = namaBarang,
         )
         hasilDiskon.value = dataDiskon.hitungDiskon()
         viewModelScope.launch {

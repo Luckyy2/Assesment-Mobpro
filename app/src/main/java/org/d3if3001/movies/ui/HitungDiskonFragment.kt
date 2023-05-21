@@ -57,6 +57,11 @@ class HitungDiskonFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
     private fun hitungDiskon() {
+        val nama = binding.namaInp.text.toString()
+        if (TextUtils.isEmpty(nama)) {
+            Toast.makeText(context, R.string.nama_invalid, Toast.LENGTH_LONG).show()
+            return
+        }
         val harga = binding.hargaInp.text.toString()
         if (TextUtils.isEmpty(harga)) {
             Toast.makeText(context, R.string.harga_invalid, Toast.LENGTH_LONG).show()
@@ -70,11 +75,13 @@ class HitungDiskonFragment : Fragment() {
         viewModel.hitungDiskon(
             harga.toDouble(),
             diskon.toDouble(),
+            nama.toString(),
         )
     }
 
     private fun showResult(result: HasilDiskon?) {
         if (result == null) return
+        binding.tvNamaBarang.text = getString(R.string.tvNama_x, result.namaBarang)
         binding.tvTotal.text = getString(R.string.tvTotal_x, result.jumlahdiskon)
 
         binding.shareButton.visibility = View.VISIBLE
@@ -82,6 +89,7 @@ class HitungDiskonFragment : Fragment() {
 
     private fun shareData() {
         val message = getString(R.string.bagikan_template,
+            binding.tvNamaBarang.text,
             binding.tvTotal.text,
         )
 

@@ -56,10 +56,10 @@ class HistoryAdapter : ListAdapter<DiskonEntity, HistoryAdapter.ViewHolder>(DIFF
             val color = Color.argb(225, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256))
 
             val hasilDiskon = item.hitungDiskon()
-            kategoriTextView.text = hasilDiskon.jumlahdiskon.toString().substring(0, 1)
+            kategoriTextView.text = hasilDiskon.namaBarang.toString().substring(0, 1)
             val circleBg = kategoriTextView.background as GradientDrawable
             circleBg.setColor(color)
-            tanggalTextView.text = dateFormatter.format(Date(item.tanggal))
+            NamaTextView.text = hasilDiskon.namaBarang.toString()
             diskonTextView.text = hasilDiskon.jumlahdiskon.toString()
         }
     }
