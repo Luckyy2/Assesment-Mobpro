@@ -16,4 +16,5 @@ interface DiskonDao {
 
     @Query("DELETE FROM diskon")
     fun clearData()
+
 }

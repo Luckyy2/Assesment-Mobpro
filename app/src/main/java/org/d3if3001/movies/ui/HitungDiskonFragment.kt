@@ -7,14 +7,17 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import org.d3if3001.movies.R
 import org.d3if3001.movies.databinding.FragmentHitungBinding
 import org.d3if3001.movies.db.DiskonDb
 import org.d3if3001.movies.model.HasilDiskon
+import org.d3if3001.movies.ui.barang.FragmentBarang
 
 class HitungDiskonFragment : Fragment() {
     private lateinit var binding: FragmentHitungBinding
+
 
     private val viewModel: DiskonViewModel by lazy {
         val db = DiskonDb.getInstance(requireContext())
@@ -35,7 +38,13 @@ class HitungDiskonFragment : Fragment() {
         binding.btnHitung.setOnClickListener { hitungDiskon() }
         binding.btnClear.setOnClickListener { reset() }
         binding.shareButton.setOnClickListener { shareData() }
+        binding.btnBarang.setOnClickListener{lanjutBarang()}
         viewModel.getHasilDiskon().observe(requireActivity()) { showResult(it) }
+    }
+
+    private fun lanjutBarang() {
+        val lanjut = Intent(requireContext(), FragmentBarang::class.java)
+        startActivity(lanjut)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -103,8 +112,10 @@ class HitungDiskonFragment : Fragment() {
 
 
     private fun reset() {
+        binding.namaInp.text?.clear()
         binding.hargaInp.text?.clear()
         binding.diskonInp.text?.clear()
+        binding.tvNamaBarang.setText("")
         binding.tvTotal.setText("")
     }
 

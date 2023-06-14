@@ -22,4 +22,7 @@
     <string name="hapus">History telah dihapus</string>
     <string name="konfirmasi">Konfimasi</string>
     <string name="batal">Cancel</string>
+    <string name="konfirmasi_hapus_satu">Apakah anda ingin menghapus data ini?</string>
+    <string name="belum_ada_barang">Barang masih kosong</string>
+    <string name="message">%1$s diklik!</string>
 </resources>

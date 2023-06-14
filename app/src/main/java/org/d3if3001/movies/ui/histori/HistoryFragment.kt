@@ -1,5 +1,6 @@
 package org.d3if3107.kalkulatordiskon.ui.histori
 
+import android.content.Context
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -7,6 +8,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.d3if3001.movies.R
 import org.d3if3001.movies.databinding.FragmentHistoryBinding
 import org.d3if3001.movies.db.DiskonDb
@@ -56,6 +61,7 @@ class HistoryFragment : Fragment() {
         }
         return super.onOptionsItemSelected(item)
     }
+
     private fun hapusData() {
         MaterialAlertDialogBuilder(requireContext())
             .setMessage(R.string.konfirmasi_hapus)

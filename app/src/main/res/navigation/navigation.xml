@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_hitungDiskonFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_hitungDiskonFragment_to_fragmentBarang"
+            app:destination="@id/fragmentBarang" />
     </fragment>
     <fragment
         android:id="@+id/firstPage"
@@ -35,4 +38,9 @@
         android:name="org.d3if3107.kalkulatordiskon.ui.histori.HistoryFragment"
         android:label="History"
         tools:layout="@layout/fragment_history"/>
+    <activity
+        android:id="@+id/fragmentBarang"
+        android:name="org.d3if3001.movies.ui.barang.FragmentBarang"
+        android:label="FragmentBarang"
+        tools:layout="@layout/fragment_barang"/>
 </navigation>
