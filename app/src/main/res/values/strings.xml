@@ -25,4 +25,6 @@
     <string name="konfirmasi_hapus_satu">Apakah anda ingin menghapus data ini?</string>
     <string name="belum_ada_barang">Barang masih kosong</string>
     <string name="message">%1$s diklik!</string>
+    <string name="koneksi_error">Koneksi Error</string>
+    <string name="barang">List Barang</string>
 </resources>

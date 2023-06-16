@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center|start"
     android:background="?android:selectableItemBackground">
 
+    <ImageView
+        android:id="@+id/imgBarang"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:contentDescription="@null"
+        tools:src="@drawable/ic_baseline_broken_image_24" />
 
-<TextView
-        android:id="@+id/tvBarang"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/img_barang"
-        app:layout_constraintTop_toTopOf="@+id/img_barang"
-        tools:text="Minyak" />
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvInggris"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="@+id/tvBarang"
-        app:layout_constraintTop_toBottomOf="@+id/tvBarang"
-        tools:text="Oil" />
+        <TextView
+            android:id="@+id/tvBarang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="nama" />
 
-    <ImageView
-        android:id="@+id/img_barang"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/minyak" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvInggris"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            tools:text="inggris" />
+
+    </LinearLayout>
+
+</LinearLayout>

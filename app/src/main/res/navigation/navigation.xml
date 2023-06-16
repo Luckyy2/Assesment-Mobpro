@@ -38,9 +38,9 @@
         android:name="org.d3if3107.kalkulatordiskon.ui.histori.HistoryFragment"
         android:label="History"
         tools:layout="@layout/fragment_history"/>
-    <activity
+    <fragment
         android:id="@+id/fragmentBarang"
-        android:name="org.d3if3001.movies.ui.barang.FragmentBarang"
+        android:name="org.d3if3001.movies.ui.barang.BarangFragment"
         android:label="FragmentBarang"
         tools:layout="@layout/fragment_barang"/>
 </navigation>

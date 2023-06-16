@@ -7,13 +7,11 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import org.d3if3001.movies.R
 import org.d3if3001.movies.databinding.FragmentHitungBinding
 import org.d3if3001.movies.db.DiskonDb
 import org.d3if3001.movies.model.HasilDiskon
-import org.d3if3001.movies.ui.barang.FragmentBarang
 
 class HitungDiskonFragment : Fragment() {
     private lateinit var binding: FragmentHitungBinding
@@ -38,14 +36,10 @@ class HitungDiskonFragment : Fragment() {
         binding.btnHitung.setOnClickListener { hitungDiskon() }
         binding.btnClear.setOnClickListener { reset() }
         binding.shareButton.setOnClickListener { shareData() }
-        binding.btnBarang.setOnClickListener{lanjutBarang()}
+
         viewModel.getHasilDiskon().observe(requireActivity()) { showResult(it) }
     }
 
-    private fun lanjutBarang() {
-        val lanjut = Intent(requireContext(), FragmentBarang::class.java)
-        startActivity(lanjut)
-    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
@@ -60,6 +54,10 @@ class HitungDiskonFragment : Fragment() {
             }
             R.id.menu_about -> {
                 findNavController().navigate(R.id.action_hitungDiskonFragment_to_aboutFragment)
+                return true
+            }
+            R.id.menu_barang -> {
+                findNavController().navigate(R.id.action_hitungDiskonFragment_to_fragmentBarang)
                 return true
             }
         }

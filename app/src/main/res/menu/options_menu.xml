@@ -12,6 +12,12 @@
         android:icon="@drawable/ic_baseline_history_24"
         android:title="@string/histori"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_barang"
+        android:icon="@drawable/ic_baseline_discount_24"
+        android:title="@string/barang"
+        app:showAsAction="ifRoom" />
 <!--    <item-->
 <!--        android:id="@+id/mode_night"-->
 <!--        android:icon="@drawable/ic_baseline_mode_night_24"-->
