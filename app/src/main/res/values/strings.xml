@@ -27,4 +27,8 @@
     <string name="message">%1$s diklik!</string>
     <string name="koneksi_error">Koneksi Error</string>
     <string name="barang">List Barang</string>
+    <string name="channel_name">Updater</string>
+    <string name="channel_desc">Update data barang otomatis</string>
+    <string name="notif_title">Ada barang baru!</string>
+    <string name="notif_text">Cek sekarang biar nggak penasaran..</string>
 </resources>

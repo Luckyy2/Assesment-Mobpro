@@ -1,13 +1,21 @@
 package org.d3if3001.movies.ui.barang
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContentProviderCompat
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import org.d3if3001.movies.MainActivity
 import org.d3if3001.movies.databinding.FragmentBarangBinding
 import org.d3if3001.movies.network.ApiStatus
 
@@ -39,6 +47,7 @@ class BarangFragment: Fragment() {
         viewModel.getStatus().observe(viewLifecycleOwner) {
             updateProgress(it)
         }
+        viewModel.scheduleUpdater(requireActivity().application)
     }
 
     private fun updateProgress(status: ApiStatus) {
@@ -48,6 +57,10 @@ class BarangFragment: Fragment() {
             }
             ApiStatus.SUCCESS -> {
                 binding.progressBar.visibility = View.GONE
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    requestNotificationPermission()
+                }
             }
             ApiStatus.FAILED -> {
                 binding.progressBar.visibility = View.GONE
@@ -55,4 +68,19 @@ class BarangFragment: Fragment() {
             }
         }
     }
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    private fun requestNotificationPermission() {
+        if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.POST_NOTIFICATIONS
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                MainActivity.PERMISSION_REQUEST_CODE
+            )
+        }
+    }
 }
+
